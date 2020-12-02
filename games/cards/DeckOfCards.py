@@ -21,11 +21,13 @@ class DeckOfCards():
         return print("The deck is shuffled")
 
     # מתודה שמוציאה קלף מהחבילה באופן אקראי
+
     def deal_one(self):
         random_card = random.choice(self.deck)
         self.deck.remove(random_card)
         return random_card
 
     # מתודה שמציגה את חפיסת הקלפים
+
     def show(self):
        return print(f"{self.deck}")
