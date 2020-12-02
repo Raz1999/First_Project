@@ -3,14 +3,16 @@ from games.cards.DeckOfCards import DeckOfCards
 from games.cards.Player import Player
 from games.cards.CardGame import CardGame
 
-P1='Raz'
-P2='Shalev'
-First_game=CardGame(P1,P2,20)
+P1 = input("Enter player 1 name: ")
+P2 = input("Enter player 2 name: ")
+Card_num = int(input("Enter number of card to dill\n(between 1-26): "))
+Rounds=int(input("Enter number of game rounds: "))
+First_game = CardGame(P1,P2,Card_num)
 
 First_game.player1.show()
 First_game.player2.show()
 
-for i in range(20):
+for i in range(Rounds):
     p1_card = First_game.player1.get_card()
     p2_card = First_game.player2.get_card()
     print(p1_card, p2_card)
@@ -19,17 +21,17 @@ for i in range(20):
     index_val_p2 = p2_card.values.index(p2_card.value)
     index_suit_p2 = p2_card.suits.index(p2_card.suit)
 
-    if index_val_p1>index_val_p2:
+    if index_val_p1 > index_val_p2:
         First_game.player2.add_card(p1_card)
         First_game.player2.add_card(p2_card)
         print(P1,'Won in Round:',i+1)
         continue
-    elif index_val_p1<index_val_p2:
+    elif index_val_p1 < index_val_p2:
         First_game.player1.add_card(p1_card)
         First_game.player1.add_card(p2_card)
         print(P2,'Won in Round:',i+1)
         continue
-    elif index_val_p1==index_val_p2:
+    elif index_val_p1 == index_val_p2:
         if index_suit_p1 > index_suit_p2:
             First_game.player2.add_card(p1_card)
             First_game.player2.add_card(p2_card)
