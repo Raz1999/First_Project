@@ -3,10 +3,10 @@ from unittest import TestCase
 
 class TestDeckOfCards(TestCase):
 
-    def setUp(self)
+    def setUp(self):
         self.test_deck
 
-    def
+
 
     def test_shuffle_deck(self):
         self.assertEqual()
