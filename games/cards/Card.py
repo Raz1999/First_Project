@@ -6,8 +6,12 @@ class Card():
     def __init__(self,value,suit):
         self.values=[2,3,4,5,6,7,8,9,10,'J','Q','K','A']
         self.suits=[u'\u2666',u'\u2660',u'\u2665',u'\u2663']
-        self.value=value
-        self.suit=suit
+        if value in self.values and suit in self.suits:
+            self.suit = suit
+            self.value = value
+        else:
+            raise TypeError('Invalid value and suit, this is Card game!')
+
 
     # מציג את הערך וצורת הקלף בהדפסה
     def __repr__(self):

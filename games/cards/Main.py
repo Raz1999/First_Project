@@ -38,6 +38,3 @@ First_game.get_winner()
 
 
 
-
-
-
