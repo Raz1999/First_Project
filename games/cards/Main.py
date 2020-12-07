@@ -1,7 +1,7 @@
-from games.cards.Card import Card
-from games.cards.DeckOfCards import DeckOfCards
-from games.cards.Player import Player
-from games.cards.CardGame import CardGame
+from First_Project.games.cards.Card import Card
+from First_Project.games.cards.DeckOfCards import DeckOfCards
+from First_Project.games.cards.Player import Player
+from First_Project.games.cards.CardGame import CardGame
 
 P1 = input("Enter player 1 name: ")
 P2 = input("Enter player 2 name: ")
@@ -12,36 +12,23 @@ First_game = CardGame(P1,P2,Card_num)
 First_game.player1.show()
 First_game.player2.show()
 
-for i in range(Rounds):
+for i in range(1,Rounds+1):
+    if len(First_game.player1.pack) == 0 or len(First_game.player2.pack) == 0:
+        break
     p1_card = First_game.player1.get_card()
     p2_card = First_game.player2.get_card()
     print(p1_card, p2_card)
-    index_val_p1 = p1_card.values.index(p1_card.value)
-    index_suit_p1 = p1_card.suits.index(p1_card.suit)
-    index_val_p2 = p2_card.values.index(p2_card.value)
-    index_suit_p2 = p2_card.suits.index(p2_card.suit)
 
-    if index_val_p1 > index_val_p2:
+    if p1_card > p2_card:
         First_game.player2.add_card(p1_card)
         First_game.player2.add_card(p2_card)
-        print(P1,'Won in Round:',i+1)
-        continue
-    elif index_val_p1 < index_val_p2:
+        print(f'The winner in round: {i}, is {First_game.player1.name}')
+    else:
         First_game.player1.add_card(p1_card)
         First_game.player1.add_card(p2_card)
-        print(P2,'Won in Round:',i+1)
-        continue
-    elif index_val_p1 == index_val_p2:
-        if index_suit_p1 > index_suit_p2:
-            First_game.player2.add_card(p1_card)
-            First_game.player2.add_card(p2_card)
-            print(P1,'Won in Round:',i+1)
-            continue
-        elif index_suit_p1 < index_suit_p2:
-            First_game.player2.add_card(p1_card)
-            First_game.player2.add_card(p2_card)
-            print(P2,'Won in Round:',i+1)
-            continue
+        print(f'The winner in round: {i}, is {First_game.player2.name}')
+
+
 print('-----------------------------')
 First_game.player2.show()
 First_game.player1.show()

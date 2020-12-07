@@ -1,5 +1,5 @@
 import random
-from games.cards.Card import Card
+from First_Project.games.cards.Card import Card
 class DeckOfCards():
 
     # המחלקה מגדירה חפיסת קלפים. כל קלף הוא אובייקט מסוג Card.

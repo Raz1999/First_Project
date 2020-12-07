@@ -1,5 +1,5 @@
-from games.cards.Player import Player
-from games.cards.DeckOfCards import DeckOfCards
+from First_Project.games.cards.Player import Player
+from First_Project.games.cards.DeckOfCards import DeckOfCards
 
 class CardGame():
 

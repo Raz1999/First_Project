@@ -1,4 +1,4 @@
-from games.cards.DeckOfCards import DeckOfCards
+from First_Project.games.cards.DeckOfCards import DeckOfCards
 import random
 class Player():
 

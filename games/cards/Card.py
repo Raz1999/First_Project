@@ -13,3 +13,17 @@ class Card():
     def __repr__(self):
         return (f"{self.value}{self.suit}")
 
+    def __gt__(self, other):
+        index_val_p1 = self.values.index(self.value)
+        index_suit_p1 = self.suits.index(self.suit)
+        index_val_p2 = other.values.index(other.value)
+        index_suit_p2 = other.suits.index(other.suit)
+        if index_val_p1 > index_val_p2:
+            return True
+        elif index_val_p1 < index_val_p2:
+            return False
+        elif index_val_p1 == index_val_p2:
+            if index_suit_p1 > index_suit_p2:
+                return True
+            else:
+                return False
