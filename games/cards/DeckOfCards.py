@@ -16,16 +16,19 @@ class DeckOfCards():
 
     # מתודה שמערבבת את האובייקטיים מסוג Card, בתוך חפיסת הקלפים.
 
-    def shuffle_deck(self,):
+    def shuffle_deck(self):
         random.shuffle(self.deck)
         return print("The deck is shuffled")
 
     # מתודה שמוציאה קלף מהחבילה באופן אקראי
 
     def deal_one(self):
-        random_card = random.choice(self.deck)
-        self.deck.remove(random_card)
-        return random_card
+        if len(self.deck) == 0:
+            return None
+        else:
+            random_card = random.choice(self.deck)
+            self.deck.remove(random_card)
+            return random_card
 
     # מתודה שמציגה את חפיסת הקלפים
 
