@@ -88,5 +88,3 @@ class TestPlayer(TestCase):
         deck1 = DeckOfCards()
         with self.assertRaises(TypeError):
             self.player1.add_card(deck1)
-
-# אפשר להוסיף חפיסה, לבדוק את זה ולהוסיף

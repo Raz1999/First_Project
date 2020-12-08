@@ -46,7 +46,4 @@ class TestDeckOfCards(TestCase):
         self.assertEqual(len(deck2.deck),0)
         self.assertIsInstance(deck2.deck,list)
         self.assertIs(deck2.deal_one(),None)
-        deck3 = DeckOfCards()
-        deck3.deck = []
-# צריך לומר שאם הרשימה ריקה לא יחזור NONE אלא שלא יחזור כלום, אחרת החבילה תגדל
 
