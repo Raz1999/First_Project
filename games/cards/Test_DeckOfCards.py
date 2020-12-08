@@ -14,6 +14,8 @@ class TestDeckOfCards(TestCase):
     def tearDown(self):
         print("The test completed")
 
+    # בדיקה לINIT של האובייקט מסוג חבילת קלפים
+    # בדקנו שאכן, המתודה מכניסה 52 קלפים לחבילה, שונים אחד מהשני, מסוג CARD
 
     def test_init(self):
         list1 = []
@@ -23,10 +25,17 @@ class TestDeckOfCards(TestCase):
                     list1.append(i)
         self.assertEqual(len(list1), 52)
 
+    # בדיקה למתודה שמערבבת את הקלפים בחבילה
+    # בדקנו שאכן החבילה עורבבה, והקלפים בה שינו את מיקומם ושאף קלף לא נעלם
+
     def test_shuffle_deck(self):
         self.assertNotEqual(self.deck1.shuffle_deck(),self.copy_deck)
         self.assertCountEqual(self.deck1.deck,self.copy_deck)
 
+    # בדיקה למתודה שמחלקת קלף אחד
+    # בדקנו שאכן המתודה מוציאה את הקלף שהיא בחרה מחבילת הקלפים, ושאורכה קטן באחד
+    # בדקנו שבמידה ויש קלף אחרון בחבילת הקלפים, המתודה עדיין יודעת לחלק אותו ולא לפגוע ברשימה
+    # לכן נשארת רשימה ריקה מקלפים, אך היא עדיין רשימה באורך 0
 
     def test_deal_one(self):
         self.assertNotIn(self.deck1.deal_one(),self.deck1.deck)
@@ -37,5 +46,7 @@ class TestDeckOfCards(TestCase):
         self.assertEqual(len(deck2.deck),0)
         self.assertIsInstance(deck2.deck,list)
         self.assertIs(deck2.deal_one(),None)
-
+        deck3 = DeckOfCards()
+        deck3.deck = []
+# צריך לומר שאם הרשימה ריקה לא יחזור NONE אלא שלא יחזור כלום, אחרת החבילה תגדל
 

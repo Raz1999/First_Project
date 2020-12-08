@@ -1,6 +1,3 @@
-from First_Project.games.cards.Card import Card
-from First_Project.games.cards.DeckOfCards import DeckOfCards
-from First_Project.games.cards.Player import Player
 from First_Project.games.cards.CardGame import CardGame
 
 P1 = input("Enter player 1 name: ")

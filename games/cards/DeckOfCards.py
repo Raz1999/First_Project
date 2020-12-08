@@ -21,6 +21,7 @@ class DeckOfCards():
         return print("The deck is shuffled")
 
     # מתודה שמוציאה קלף מהחבילה באופן אקראי
+    # אם החבילה ריקה, היא תחזיר NONE
 
     def deal_one(self):
         if len(self.deck) == 0:
