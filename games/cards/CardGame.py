@@ -8,6 +8,7 @@ class CardGame():
     # המתודה יוצרת חבילת קלפים אקראית חדשה
     # במידה והמחלקה מקבלת מספר קלפים, שהוא לא מספר, עולה שגיאה מסוג TYPE
 
+
     def __init__(self, name1, name2, num_cards = 10):
         if type(num_cards) != int:
             raise TypeError('Invalid Type, int type is needed')
@@ -17,6 +18,7 @@ class CardGame():
             self.player2 = Player(name2, num_cards)
             self.game_deck = DeckOfCards()
             self.new_game()
+
 
     # מתודה שמערבבת את חבילת הקלפים ומחלקת קלפים לשתי השחקנים
     # המתודה פועלת רק כאשר המשחק עוד לא התחיל, נקראית מהקונסטרקטור
@@ -32,7 +34,9 @@ class CardGame():
         else:
             raise SystemError("the game is already began")
 
+
     # מתודה שמכריעה מי הזוכה במשחק, מחזירה אותו ומדפיסה הודעה בהתאם
+
 
     def get_winner(self):
         if len(self.player1.pack)<len(self.player2.pack):

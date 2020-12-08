@@ -21,10 +21,12 @@ class TestPlayer(TestCase):
     def tearDown(self):
         print('Test is completed')
 
+
     # בדיקה לINIT של המחלקה המגדירה שחקן
     # בבדיקה זו אנו בודקים עבור ערכים שונים, שאורך החבילה של השחקן יהיה המספר שהגדרנו לו
     # ובמידה והמספר שלילי או מעל 26, החבילה תיהיה באורך 26
     # במידה והשחקן מקבל אורך חבילה שהוא לא מסוג INT תעלה שגיאה מסוך TYPE
+
 
     def test_init(self):
         player5 = Player("name", -4)
@@ -38,10 +40,12 @@ class TestPlayer(TestCase):
             player7 = Player("name", "abc")
             player8 = Player('name', 4.5)
 
+
     # בדיקה למתודה המחלקת לשחקן חבילת קלפים מחבילת המשחק
     # ביצענו בדיקה עבור נתוני קצה, ועבור ערך בין טווח זה
     # אין צורך להציב ערכים מסוגים נוספים שכן לא נקבל כאלה בעקבות השגיאה שתעלה בקונסרקטור
     # בנוסף, בדקנו שכאשר חבילת הקלפים ריקה, ממנה מחלקים קלפים, חבילת השחקן לא משתנה והוא לא מקבל קלפים
+
 
     def test_set_hand(self):
         deck1 = DeckOfCards()
@@ -59,9 +63,11 @@ class TestPlayer(TestCase):
         player_1.set_hand(deck4)
         self.assertEqual(len(player_1.pack), 0)
 
+
     # בדיקה למתודה שלוקחת מהשחקן קלף אקראי
     # בדקנו שהקלף הנבחר אכן מהחבילה של השחקן, ושהוא אובייקט מסוג קלף
     # בדקנו שקלף אכן ירד מחבילת הקלפים של השחקן, ושאורך החבילה ירד באחד
+
 
     def test_get_card(self):
         copy_pack = self.player1.pack.copy()
@@ -71,11 +77,13 @@ class TestPlayer(TestCase):
         self.assertNotIn(rand_card, self.player1.pack)
         self.assertEqual(len(self.player1.pack) + 1,len(copy_pack))
 
+
     # בדיקה למתודה שמוסיפה לשחקן קלף
     # המתודה מקבלת אובייקט מסוג קלף
     # בדקנו שכאשר המתודה מקבל אובייקט קלף, היא אכן מוסיפה את הקלף לחבילת השחקן, ושאורך החבילה גדל באחד
     # בנוסף בדקנו שכאשר המתודה הזו מקבלת משתנה מסוג אחר, עולה שגיאה מסוג TYPE
     # בדקנו גם שכאשר אנו מוסיפים לשחקן חפיסה שלמה, זה מעלה שגיאה
+
 
     def test_add_card(self):
         self.player1.add_card(self.r_card)

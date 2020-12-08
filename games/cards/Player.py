@@ -8,6 +8,7 @@ class Player():
     # המתודה מקבלת את כמות הקלפים שיוחלקו לכל שחקן ואת שמו
     # במידה והאובייקט שחקן יקבל אורך חבילה שהוא לא INT, תעלה שגיאה מסוג TYPE
 
+
     def __init__(self, name, len_pack):
         if type(len_pack) is int:
             if len_pack > 26 or len_pack < 0:
@@ -18,10 +19,12 @@ class Player():
         self.len_pack = len_pack
         self.pack = []
 
+
     # מתודה שמחלקת חבילת קלפים אישית לשחקן לפי אורך החבילה שהגדרנו לשחקנים
     # במידה ובחבילת הקלפים אין קלפים בכלל, המתודה לא תבצע כלום
     # המתודה מקבלת את חבילת הקלפים ממנה מחלקים קלפים לשחקנים, במידה וזה לא אובייקט של חבילת קלפים
     # תעלה שגיאה מסוג TYPE
+
 
     def set_hand(self, game_deck):
          if type(game_deck) == DeckOfCards:
@@ -38,13 +41,16 @@ class Player():
     # מתודה שמושכת קלף אקראי מהשחקן
     # ומוחקת אותו מהחבילה שלו
 
+
     def get_card(self):
         rand_card = random.choice(self.pack)
         self.pack.remove(rand_card)
         return rand_card
 
+
     # מתודה שמוסיפה לחבילת הקלפים של השחקן קלף
     # במידה והמתודה לא מקבלת אובייקט קלף, תעלה שגיאה מסוג TYPE
+
 
     def add_card(self, card):
         if type(card) == Card:
@@ -52,7 +58,9 @@ class Player():
         else:
             raise TypeError('Invalid type, Card type is needed')
 
+
     # מתודה שמציגה את פרטי השחקן, שמו וחבילת הקלפים שלו
+
 
     def show(self):
         print(f"player name: {self.name}\nplayer hand: {self.pack}")
